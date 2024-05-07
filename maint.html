@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System - Maintenance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .maintenance {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .maintenance h2 {
+            text-align: center;
+        }
+        .maintenance label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .maintenance input,
+        .maintenance select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .maintenance button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .maintenance button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function
+        function validateMembershipForm() {
+            const userID = document.getElementById("userID").value;
+            const membershipType = document.getElementById("membershipType").value;
+
+            if (userID === "") {
+                alert("User ID is required");
+                return false;
+            }
+
+            if (membershipType === "") {
+                alert("Membership type is required");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="maintenance">
+        <h2>Maintenance - Add/Update Membership</h2>
+        <form method="post" action="process_membership.php" onsubmit="return validateMembershipForm()">
+            <label for="userID">User ID:</label>
+            <input type="number" id="userID" name="userID" required>
+
+            <label for="membershipType">Membership Type:</label>
+            <select id="membershipType" name="membershipType">
+                <option value="6 months" selected>6 months</option>
+                <option value="1 year">1 year</option>
+                <option value="2 years">2 years</option>
+            </select>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <button type="submit">Add/Update Membership</button>
+        </form>
+    </div>
+</body>
+</html>
